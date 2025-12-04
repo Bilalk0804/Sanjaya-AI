@@ -1,0 +1,11 @@
+langchain
+langgraph
+langchain-google-genai
+google-generativeai
+langchain-community
+pydantic>=2.8.2
+pandas
+numpy
+requests
+reportlab
+tiktoken
