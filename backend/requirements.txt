@@ -1,21 +1,7 @@
-# Core Agent Framework
-pydantic-ai[vertexai]
-pydantic
-pydantic-core
-
-# Google Gemini SDK
 google-generativeai
+openai>=1.37.0
+httpx>=0.27.0
+supabase>=2.5.0
+python-dotenv>=1.0.0
+pydantic>=2.7.0
 
-# Supabase
-supabase
-gotrue
-postgrest
-realtime
-storage3
-
-
-# LangGraph (only if needed in your project—safe with pydantic-ai)
-langgraph
-
-# Utilities
-protobuf

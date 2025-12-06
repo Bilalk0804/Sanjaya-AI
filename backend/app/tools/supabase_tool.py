@@ -7,9 +7,8 @@ key = settings.SUPABASE_KEY
 supabase = create_client(url, key)
 
 def run_query(sql: str):
-    """Execute SQL on Supabase Postgres."""
     try:
-        result = supabase.postgrest.rpc("exec_sql", {"sql": sql}).execute()
+        result = supabase.rpc("exec_sql", {"query": sql}).execute()
         return result.data
     except Exception as e:
         return {"error": str(e)}
