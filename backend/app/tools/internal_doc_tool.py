@@ -7,10 +7,8 @@ from reportlab.lib import colors
 from datetime import datetime
 import os
 
-# Step out of tools → into app
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# Now point to app/data
 DATA_FOLDER = os.path.join(BASE_DIR, "data")
 
 def list_documents():
