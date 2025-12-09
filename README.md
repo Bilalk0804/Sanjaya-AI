@@ -202,7 +202,7 @@ Output:
 ---
 ## 🤖 Autonomous AI Workflow
 
-<img src="./frontend/public/architecture_diagram.png" />
+<img src="./frontend/public/Autonomus_AI.jpg" />
 
 ---
 
@@ -247,7 +247,7 @@ Output:
 <tr>
 <td><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></td>
 <td>Core backend programming language</td>
-<td>3.10+</td>
+<td>3.11</td>
 </tr>
 
 <!-- AI & Multi-Agent Section -->
@@ -274,18 +274,91 @@ Output:
 
 </table>
 
----
-## 📽 End-to-End Demo Workflow  
-1. User enters a query:  
-   *“Sanjaya AI, find innovation opportunities for Molecule X.”*  
-2. Sanjaya AI interprets the query and breaks it into subtasks  
-3. Worker Agents fetch:  
-   - Market intelligence  
-   - Clinical trials  
-   - Unmet needs  
-   - Patent activity  
-   - Scientific evidence  
-4. Sanjaya AI synthesizes the insights into an innovation story  
-5. Report Generator creates a downloadable PDF  
+# 📚 Installation & Setup
+
+Get **Sanjaya AI** running locally in minutes.
+
+## Prerequisites
+
+- Python 3.11
+- Node.js 18+ (LTS)
+- Git
+- Supabase account
+
+## Quick Start
+
+### 1. Clone & Navigate
+```bash
+git clone https://github.com/Swayam8115/Sanjaya-AI
+cd Sanjaya-AI
+```
+
+### 2. Setup Python Environment
+
+**macOS/Linux:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Install Backend Dependencies
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment
+
+Create `backend/.env` from `.env.example` and add your keys:
+```env
+GOOGLE_API_KEY=...
+SUPABASE_URL=...
+SUPABASE_KEY=...
+```
+
+### 5. Upload Datasets to Supabase
+
+**Via Web UI:**
+1. Go to Supabase Dashboard → Storage
+2. Create bucket: `datasets`
+3. Upload `patents.csv` and `iqvia.csv`
+
+**Via CLI:**
+```bash
+supabase storage cp ./data/patents.csv datasets/patents.csv
+supabase storage cp ./data/iqvia.csv datasets/iqvia.csv
+```
+
+### 6. Start Backend
+```bash
+cd backend
+uvicorn main:app --reload --port 8000
+```
+
+Backend runs at `http://127.0.0.1:8000`
+
+### 7. Start Frontend
+
+In a new terminal:
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ---
+
+## 🎬 How It Works
+
+1. **User Query:** *"Find innovation opportunities for Molecule X"*
+2. **Task Breakdown:** Sanjaya AI splits into subtasks
+3. **Agent Execution:** Worker agents fetch market data, trials, patents, evidence
+4. **Synthesis:** Insights merged into innovation narrative
+5. **Report:** Downloadable PDF generated
+
